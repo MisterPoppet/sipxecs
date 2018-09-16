@@ -1,0 +1,656 @@
+<?xml version="1.0"?>
+<!DOCTYPE model PUBLIC "-//SIPFoundry//sipXconfig//Model specification 2.0//EN"
+  "http://www.sipfoundry.org/sipXconfig/dtd/setting_2_0.dtd" [
+  <!ENTITY types SYSTEM "types.xml">
+  ]>
+<model>
+  &types;
+  <group name='time'>
+    <setting name="time_zone">
+      <type refid="time_zone" />
+      <value>America/Chicago</value>
+    </setting>
+    <setting name="time_source">
+      <type>
+        <enum>
+          <option><value>ntp</value></option>
+        </enum>
+      </type>
+      <value>ntp</value>
+    </setting>
+    <setting name="ntp_server">
+      <type>
+        <string/>
+      </type>
+      <value>0.digium.pool.ntp.org</value>
+    </setting>
+    <setting name="ntp_resync">
+      <type>
+        <integer/>
+      </type>
+      <value>86400</value>
+    </setting>
+    <setting name="ntp_prefer_option42">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+  </group>
+
+  <group name='sip'>
+    <setting name="accept_local_calls">
+      <type>
+        <enum>
+          <option><value>any</value></option>
+          <option><value>host</value></option>
+        </enum>
+      </type>
+      <value>host</value>
+    </setting>
+    <setting name="transport_udp_enabled">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="transport_udp_port">
+      <type>
+        <integer min="1" max="65535" />
+      </type>
+      <value>5060</value>
+    </setting>
+    <setting name="transport_tcp_enabled">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="transport_tcp_port">
+      <type>
+        <integer min="1" max="65535" />
+      </type>
+      <value>5060</value>
+    </setting>
+    <setting name="transport_tls_allowed">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="transport_tls_port">
+      <type>
+        <integer min="1" max="65535" />
+      </type>
+      <value>5061</value>
+    </setting>
+    <setting name="udp_ka_interval">
+      <type>
+        <integer/>
+      </type>
+      <value>0</value>
+    </setting>
+  </group>
+
+  <group name='idle-screen'>
+    <setting name="logo_file">
+      <type>
+        <string/>
+      </type>
+      <value>/factory_asterisk.png</value>
+    </setting>
+    <setting name="wallpaper_file">
+      <type>
+        <string/>
+      </type>
+      <value>/factory_wallpaper.png</value>
+    </setting>
+    <setting name="display_mc_notification">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="display_pickup_notification">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="hide_completed_elsewhere">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="small_clock">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="idle_company_text">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+  </group>
+
+  <group name='display'>
+    <setting name="brightness">
+      <type>
+        <integer min="0" max="10"/>
+      </type>
+      <value>5</value>
+    </setting>
+    <setting name="contrast">
+      <type>
+        <integer min="0" max="10"/>
+      </type>
+      <value>5</value>
+    </setting>
+    <setting name="enable_check_sync">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="dim_backlight">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="backlight_timeout">
+      <type>
+        <integer min="0" max="3200"/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="backlight_dim_level">
+      <type>
+        <integer min="0" max="10"/>
+      </type>
+      <value>2</value>
+    </setting>
+    <setting name="blf_page_return_timeout">
+      <type>
+        <integer min="0" max="60"/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="default_fontsize">
+      <type>
+        <integer min="10" max="14"/>
+      </type>
+      <value>11</value>
+    </setting>
+  </group>
+
+  <group name='localization'>
+    <setting name="locale">
+      <type refid="locale" />
+      <value>en_US</value>
+    </setting>
+    <setting name="time_short_format">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="date_short_format">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="date_time_format">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="idle_screen_clock_format">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+  </group>
+
+  <group name='sounds'>
+    <setting name="ringer_volume">
+      <type>
+        <integer min="0" max="10"/>
+      </type>
+      <value>5</value>
+    </setting>
+    <setting name="lock_ringing_volume">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="speaker_volume">
+      <type>
+        <integer min="0" max="10"/>
+      </type>
+      <value>5</value>
+    </setting>
+    <setting name="handset_volume">
+      <type>
+        <integer min="0" max="10"/>
+      </type>
+      <value>5</value>
+    </setting>
+    <setting name="headset_volume">
+      <type>
+        <integer min="0" max="10"/>
+      </type>
+      <value>5</value>
+    </setting>
+    <setting name="handset_sidetone_db">
+      <type>
+        <integer/>
+      </type>
+      <value>-25</value>
+    </setting>
+    <setting name="headset_sidetone_db">
+      <type>
+        <integer/>
+      </type>
+      <value>-15</value>
+    </setting>
+    <setting name="reset_call_volume">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="active_ringtone">
+      <type>
+        <string/>
+      </type>
+      <value>Digium</value>
+    </setting>
+  </group>
+
+  <group name='answering-calls'>
+    <setting name="headset_answer">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="ring_headset_only">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="call_waiting_tone">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="ehs">
+      <type>
+        <enum>
+          <option><value>auto</value></option>
+          <option><value>jabra_iq</value></option>
+          <option><value>plantronics</value></option>
+        </enum>
+      </type>
+      <value>auto</value>
+    </setting>
+    <setting name="call_control_checkx">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+  </group>
+
+  <group name='contacts'>
+    <setting name="enable_blf_on_unused_line_keys">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="contacts_max_subscriptions">
+      <type>
+        <integer/>
+      </type>
+      <value>40</value>
+    </setting>
+    <setting name="name_format">
+      <type>
+        <enum>
+          <option><value>first_last</value></option>
+          <option><value>Last_first</value></option>
+        </enum>
+      </type>
+      <value>first_last</value>
+    </setting>
+  </group>
+
+  <group name='ip-settings'>
+    <setting name="network_enable_dhcp">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="network_static_ip_address">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="network_subnet_mask">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="network_default_gateway">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="network_primary_dns_server">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="network_secondary_dns_server">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="network_disable_arping">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="allow_insecure_ssl">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="network_ipv6_enabled">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="network_ipv6_preferred">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="network6_static_ip_address">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="network6_mask">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="network6_default_gateway">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+  </group>
+
+  <group name='vlan'>
+    <setting name="network_vlan_discovery_mode">
+      <type>
+        <enum>
+          <option><value>NONE</value></option>
+          <option><value>MANUAL<value></option>
+          <option><value>LLDP</value></option>
+        </enum>
+      </type>
+      <value>LLDP</value>
+    </setting>
+    <setting name="network_vlan_id">
+      <type>
+        <integer min="0" max="4095"/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="pc_vlan_id">
+      <type>
+        <integer min="0" max="4095"/>
+      </type>
+      <value></value>
+    </setting>
+  </group>
+
+  <group name='interfaces'>
+    <setting name="lan_port_mode">
+      <type>
+        <enum>
+          <option><value>auto</value></option>
+          <option><value>10hd<value></option>
+          <option><value>10fd</value></option>
+          <option><value>100hd<value></option>
+          <option><value>100fd</value></option>
+          <option><value>1000fd<value></option>
+        </enum>
+      </type>
+      <value>auto</value>
+    </setting>
+    <setting name="pc_port_mode">
+      <type>
+        <enum>
+          <option><value>auto</value></option>
+          <option><value>10hd<value></option>
+          <option><value>10fd</value></option>
+          <option><value>100hd<value></option>
+          <option><value>100fd</value></option>
+          <option><value>1000fd<value></option>
+          <option><value>off<value></option>
+        </enum>
+      </type>
+      <value>auto</value>
+    </setting>
+  </group>
+
+  <group name='logging'>
+    <setting name="log_level">
+      <type>
+        <enum>
+          <option><value>error</value></option>
+          <option><value>warning</value></option>
+          <option><value>debug</value></option>
+          <option><value>information</value></option>
+        </enum>
+      </type>
+      <value>error</value>
+    </setting>
+    <setting name="log_server">
+      <type>
+        <ipaddr/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="log_port">
+      <type>
+        <integer/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="enable_logging">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+  </group>
+
+  <group name='misc'>
+    <setting name="web_ui_enabled">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="sip_qos">
+      <type>
+        <integer min="0" max="7"/>
+      </type>
+      <value>3</value>
+    </setting>
+    <setting name="rtp_qos">
+      <type>
+        <integer min="0" max="7"/>
+      </type>
+      <value>6</value>
+    </setting>
+    <setting name="pc_qos">
+      <type>
+        <integer min="0" max="7"/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="sip_dscp">
+      <type>
+        <integer min="0" max="63"/>
+      </type>
+      <value>24</value>
+    </setting>
+    <setting name="rtp_dscp">
+      <type>
+        <integer min="0" max="63"/>
+      </type>
+      <value>46</value>
+    </setting>
+  </group>
+
+  <group name='8021x'>
+    <setting name="8021x_passthrough">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="8021x_eapol_on_disconnect">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="8021x_method">
+      <type>
+        <enum>
+          <option><value>null</value></option>
+          <option><value>eap-md5</value></option>
+          <option><value>peap-mschap</value></option>
+          <option><value>eap-tls</value></option>
+          <option><value>peap-gtc</value></option>
+          <option><value>ttls-mschap</value></option>
+          <option><value>ttls-gtc</value></option>
+      </type>
+      <value>null</value>
+    </setting>
+    <setting name="8021x_identity">
+      <type>
+        <string/>
+      </type>
+      <value>null</value>
+    </setting>
+    <setting name="8021x_anonymous_identity">
+      <type>
+        <string/>
+      </type>
+      <value>null</value>
+    </setting>
+    <setting name="8021x_password">
+      <type>
+        <string/>
+      </type>
+      <value>null</value>
+    </setting>
+    <setting name="8021x_client_cert">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="8021x_client_key">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="8021x_debug">
+      <type>
+        <enum>
+          <option><value>null</value></option>
+          <option><value>-d</value></option>
+          <option><value>-dd</value></option>
+        </enum>
+      </type>
+      <value>null</value>
+    </setting>
+  </group>
+
+  <group name='openvpn'>
+    <setting name="network_default_enable_openvpn">
+      <type>
+        <boolean/>
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="openvpn_inline_config">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+  </group>
+
+  <group name="feature">
+    <setting name="directory">
+      <type>
+        <boolean />
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="group-call-pickup">
+      <type>
+        <boolean />
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="directed-call-pickup">
+      <type>
+        <boolean />
+      </type>
+      <value>0</value>
+    </setting>
+    <setting name="call_pickup_code">
+      <type>
+        <string />
+      </type>
+      <value />
+    </setting>
+  </group>
+</model>

@@ -1,0 +1,20 @@
+<config>
+  <smart_blf>
+    <blf_items>
+      #foreach ($button in $cfg.SpeedDial)
+      <blf_item contact_id="sd-${button.Number}">
+        <behaviors>
+          <behavior phone_state="idle" press_action="regular_dial" press_function="dial" />
+          <behavior phone_state="connected" press_action="blindxfer" press_function="transfer" />
+          <behavior phone_state="connected" press_action="vmxfer" press_function="transfer" />
+        </behaviors>
+        <indicators>
+          <indicator target_status="idle" led_color="green" led_state="on" />
+          <indicator target_status="ringing" led_color="red" led_state="fast" />
+          <indicator target_status="on_the_phone" led_color="red" led_state="on" />
+        </indicators>
+      </blf_item>
+      #end
+    </blf_items>
+  </smart_blf>
+</config>

@@ -1,0 +1,85 @@
+#set($serial = "$phone.SerialNumber")
+#set($TFTPServer = "$phone.TftpServer")
+<?xml version="1.0" ?>
+<config>
+  #set ($group = $cfg.EndpointSettings.getSetting('time'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('sip'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('idle-screen'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('display'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('localization'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('sounds'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('answering-calls'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('contacts'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('ip-settings'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('vlan'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('interfaces'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('logging'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('misc'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('8021x'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  #set ($group = $cfg.EndpointSettings.getSetting('openvpn'))
+  #foreach ($setting in $cfg.getSettings($group))
+  <setting id="${setting.ProfileName}" value="$!{setting.Value}"/>
+  #end
+
+  <smart_blf>
+    <blf_items url="$!{TFTPServer}${serial}-smartblf.xml" />
+  </smart_blf>
+
+  <contacts url="$!{TFTPServer}${serial}-directory.xml" id="corporate" />
+</config>

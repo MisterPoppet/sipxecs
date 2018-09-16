@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!DOCTYPE model PUBLIC "-//SIPFoundry//sipXconfig//Model specification 2.0//EN"
+    "http://www.sipfoundry.org/sipXconfig/dtd/setting_2_0.dtd" [
+	<!ENTITY types SYSTEM "types.xml">
+]>
+<model>
+  <group name="account">
+    <setting name="server_uuid">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="status">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="register">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="account_id">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="username">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="authname">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="password">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="passcode">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="line_label">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="caller_id">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="dial_plan">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="voicemail">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="needMwiSubscription">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="outbound_proxy">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="outbound_port">
+      <type>
+        <integer/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="plar_number">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="ring_type">
+      <type>
+        <enum>
+          <option><value>normal</value></option>
+          <option><value>answer</value></option>
+          <option><value>ring-answer</value></option>
+          <option><value>visual</value></option>
+        </enum>
+      </type>
+      <value>normal</value>
+    </setting>
+  </group>
+
+  <group name="host_primary">
+    <setting name="server">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="port">
+      <type>
+        <integer min="1" max="65535"/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="transport">
+      <type>
+        <enum>
+          <option><value>udp</value></option>
+          <option><value>tcp</value></option>
+          <option><value>tls</value></option>
+        </enum>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="media_encryption">
+      <type>
+        <enum>
+          <option><value>null</value></option>
+          <option><value>sdes</value></option>
+        </enum>
+      </type>
+      <value>null</value>
+    </setting>
+    <setting name="reregister">
+      <type>
+        <integer/>
+      </type>
+      <value>300</value>
+    </setting>
+    <setting name="retry">
+      <type>
+        <integer/>
+      </type>
+      <value>25</value>
+    </setting>
+  </group>
+
+  <group name="host_secondary">
+    <setting name="server">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="port">
+      <type>
+        <integer min="1" max="65535"/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="transport">
+      <type>
+        <enum>
+          <option><value>udp</value></option>
+          <option><value>tcp</value></option>
+          <option><value>tls</value></option>
+        </enum>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="reregister">
+      <type>
+        <integer/>
+      </type>
+      <value>300</value>
+    </setting>
+    <setting name="retry">
+      <type>
+        <integer/>
+      </type>
+      <value>25</value>
+    </setting>
+    <setting name="authname">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+    <setting name="password">
+      <type>
+        <string/>
+      </type>
+      <value></value>
+    </setting>
+  </group>
+
+  <group name="permission">
+    <setting name="use_voicemail">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="send_to_voicemail">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+    <setting name="ignore_calls">
+      <type>
+        <boolean/>
+      </type>
+      <value>1</value>
+    </setting>
+  </group>
+</model>

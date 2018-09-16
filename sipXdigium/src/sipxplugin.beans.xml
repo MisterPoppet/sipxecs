@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_6_6"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_6_5"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_6_1"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_4_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_4_1"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_3_8"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_3_7"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_3_4"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_2_3"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_2_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_8"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_7"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_4"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_3"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_1"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_0_8"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_0_5"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_0_4"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_0_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_1_0_3"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_1_0_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_0_3_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_0_3_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_0_2_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_0_1_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_8_8"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_8_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_8_1"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_7_1"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_6_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_5_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_6"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_3"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_2_1"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_2_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_1"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_1_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_0_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_3_3_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_3_2"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_3_2_3"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+  <bean id="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_3_2_0"
+    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+
+  <bean id="digiumModel" class="org.sipfoundry.sipxconfig.phone.digium.DigiumModel" parent="abstractPhoneModel" abstract="true">
+    <property name="vendor" value="Digium"/>
+    <property name="restartSupported" value="true" />
+    <property name="externalLinesSupported" value="true" />
+    <property name="versions">
+      <list>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_6_6"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_6_5"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_6_1"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_4_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_4_1"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_3_8"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_3_7"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_3_4"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_2_3"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_2_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_8"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_7"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_4"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_3"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_1_1"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_0_8"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_0_5"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_0_4"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_2_0_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_1_0_3"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_1_0_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_0_3_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_0_3_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_0_2_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_0_1_0"/>
+      </list>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+    </property>
+    <property name="profileTemplate" value="digium/digium.xml.vm" />
+    <property name="directoryTemplate" value="digium/contacts.xml.vm" />
+    <property name="speedDialTemplate" value="digium/smartblf.xml.vm" />
+  </bean>
+
+  <bean id="digiumPhoneD40" parent="digiumModel">
+    <property name="label" value="Digium D40" />
+    <property name="name" value="D40" />
+    <property name="maxLineCount" value="5" />
+    <property name="supportedFeatures">
+      <set>
+        <value>hasHDSound</value>
+        <value>hasPhoneBook</value>
+        <value>hasRingTones</value>
+        <value>hasLanguages</value>
+      </set>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+    </property>
+  </bean>
+
+  <bean id="digiumPhoneD45" parent="digiumModel">
+    <property name="label" value="Digium D45" />
+    <property name="name" value="D45" />
+    <property name="maxLineCount" value="5" />
+    <property name="supportedFeatures">
+      <set>
+        <value>hasHDSound</value>
+        <value>hasPhoneBook</value>
+        <value>hasRingTones</value>
+        <value>hasLanguages</value>
+      </set>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+    </property>
+  </bean>
+
+  <bean id="digiumPhoneD50" parent="digiumModel">
+    <property name="label" value="Digium D50" />
+    <property name="name" value="D50" />
+    <property name="maxLineCount" value="5" />
+    <property name="supportedFeatures">
+      <set>
+        <value>hasHDSound</value>
+        <value>hasPhoneBook</value>
+        <value>hasRingTones</value>
+        <value>hasLanguages</value>
+      </set>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+    </property>
+  </bean>
+
+  <bean id="digiumPhoneD60" parent="digiumModel">
+    <property name="label" value="Digium D60" />
+    <property name="name" value="D60" />
+    <property name="maxLineCount" value="5" />
+    <property name="supportedFeatures">
+      <set>
+        <value>hasHDSound</value>
+        <value>hasPhoneBook</value>
+        <value>hasRingTones</value>
+        <value>hasLanguages</value>
+      </set>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+    </property>
+  </bean>
+
+  <bean id="digiumPhoneD62" parent="digiumModel">
+    <property name="label" value="Digium D62" />
+    <property name="name" value="D62" />
+    <property name="maxLineCount" value="5" />
+    <property name="supportedFeatures">
+      <set>
+        <value>hasHDSound</value>
+        <value>hasPhoneBook</value>
+        <value>hasRingTones</value>
+        <value>hasLanguages</value>
+      </set>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+    </property>
+  </bean>
+
+  <bean id="digiumPhoneD65" parent="digiumModel">
+    <property name="label" value="Digium D65" />
+    <property name="name" value="D65" />
+    <property name="maxLineCount" value="5" />
+    <property name="supportedFeatures">
+      <set>
+        <value>hasHDSound</value>
+        <value>hasPhoneBook</value>
+        <value>hasRingTones</value>
+        <value>hasLanguages</value>
+      </set>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+    </property>
+  </bean>
+
+  <bean id="digiumPhoneD70" parent="digiumModel">
+    <property name="label" value="Digium D70" />
+    <property name="name" value="D70" />
+    <property name="maxLineCount" value="5" />
+    <property name="supportedFeatures">
+      <set>
+        <value>hasHDSound</value>
+        <value>hasPhoneBook</value>
+        <value>hasRingTones</value>
+        <value>hasLanguages</value>
+      </set>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_2_7_0"/>
+    </property>
+  </bean>
+
+  <bean id="digiumPhoneD80" parent="digiumModel">
+    <property name="label" value="Digium D80" />
+    <property name="name" value="D80" />
+    <property name="maxLineCount" value="1" />
+    <property name="supportedFeatures">
+      <set>
+        <value>hasHDSound</value>
+        <value>hasPhoneBook</value>
+        <value>hasRingTones</value>
+        <value>hasLanguages</value>
+      </set>
+    </property>
+    <property name="versions">
+      <set>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_8_8"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_8_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_8_1"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_7_1"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_6_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_5_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_6"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_3"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_2_1"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_2_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_1"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_1_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_4_0_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_3_3_0"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_3_2"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_3_2_3"/>
+        <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_3_2_0"/>
+      </set>
+    </property>
+    <property name="defaultVersion">
+      <ref local="org.sipfoundry.sipxconfig.phone.digium.DigiumModel.VER_1_8_8"/>
+    </property>
+  </bean>
+</beans>
