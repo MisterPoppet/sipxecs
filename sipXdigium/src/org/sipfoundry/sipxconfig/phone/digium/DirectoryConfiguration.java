@@ -40,14 +40,14 @@ public class DirectoryConfiguration extends ProfileContext {
       phonebookType = device.getPhonebookType();
   }
 
-  public Collection<Button> getSpeedDial() {
+  /*public Collection<Button> getSpeedDial() {
     DigiumPhone phone = (DigiumPhone) getDevice();
     if (null == phone.getSpeedDial()) {
       return Collections.emptyList();
     } else {
       return phone.getSpeedDial().getButtons();
     }
-  }
+  }*/
 
   public Collection<DigiumPhonebookEntry> getRows() {
     int size = getSize();

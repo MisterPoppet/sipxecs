@@ -21,20 +21,20 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.sipfoundry.sipxconfig.device.ProfileContext;
+import org.sipfoundry.sipxconfig.speeddial.SpeedDial;
 import org.sipfoundry.sipxconfig.speeddial.Button;
 
 public class SpeedDialConfiguration extends ProfileContext {
+  private List<Button> m_buttons;
 
-  public SpeedDialConfiguration(DigiumPhone device, String profileTemplate) {
+  public SpeedDialConfiguration(DigiumPhone device, SpeedDial speedDial, String profileTemplate) {
     super(device, profileTemplate);
+    if (speedDial != null) {
+        m_buttons = speedDial.getButtons();
+    }
   }
 
   public Collection<Button> getSpeedDial() {
-    DigiumPhone phone = (DigiumPhone) getDevice();
-    if (null == phone.getSpeedDial()) {
-      return Collections.emptyList();
-    } else {
-      return phone.getSpeedDial().getButtons();
-    }
+    return m_buttons;
   }
 }

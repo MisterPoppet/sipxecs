@@ -66,7 +66,7 @@ public final class DigiumModel extends PhoneModel {
   public static final DeviceVersion VER_1_3_2_0 = new DeviceVersion(DigiumPhone.BEAN_ID, "1.3.2.0");
 
   public static final DeviceVersion[] SUPPORTED_VERSIONS = new DeviceVersion[] {
-    VER_6X, VER_2_7_0, VER_2_6_6, VER_2_6_5, VER_2_6_1, VER_2_4_2, VER_2_4_1, VER_2_3_8, VER_2_3_7, VER_2_3_4,
+    VER_2_7_0, VER_2_6_6, VER_2_6_5, VER_2_6_1, VER_2_4_2, VER_2_4_1, VER_2_3_8, VER_2_3_7, VER_2_3_4,
     VER_2_2_2_3, VER_2_2_2_2, VER_2_2_1_8, VER_2_2_1_7, VER_2_2_1_4, VER_2_2_1_3, VER_2_2_1_2, VER_2_2_1_1,
     VER_2_2_0_8, VER_2_2_0_5, VER_2_2_0_4, VER_2_2_0_0, VER_2_1_0_3, VER_2_1_0_0, VER_2_0_3_2, VER_2_0_3_0,
     VER_2_0_2_0, VER_2_0_1_0, VER_1_8_8, VER_1_8_2, VER_1_8_1, VER_1_7_1, VER_1_6_2, VER_1_5_2, VER_1_4_6,
@@ -93,12 +93,10 @@ public final class DigiumModel extends PhoneModel {
   }
 
   public void setDefaultVersion(DeviceVersion value) {
-      LOG.debug("DigiumModel:setDefaultVersion");
       m_deviceVersion = value;
   }
 
   public DeviceVersion getDefaultVersion() {
-      LOG.debug("DigiumModel:getDefaultVersion");
       if(m_deviceVersion != null)
       {
           return m_deviceVersion;

@@ -20,6 +20,7 @@ import org.sipfoundry.sipxconfig.speeddial.SpeedDial;
 
 public class DigiumPhone extends Phone {
   public static final String BEAN_ID = "digium";
+  public static final String MIME_TYPE_PLAIN = "text/plain";
   public static final String MAC_PREFIX = "000FD3";
   public static final String DISPLAY_NAME_PATH = "account/line_label";
   public static final String USER_ID_PATH = "account/account_id";
@@ -97,12 +98,12 @@ public class DigiumPhone extends Phone {
       super(name, MIME_TYPE_PLAIN);
     }
 
-    @Override
+    //@Override
     protected ProfileFilter createFilter(Device device) {
       return null;
     }
 
-    @Override
+    //@Override
     protected ProfileContext createContext(Device device) {
       DigiumPhone phone = (DigiumPhone) device;
       DigiumModel model = (DigiumModel) phone.getModel();
@@ -118,12 +119,12 @@ public class DigiumPhone extends Phone {
       m_phonebook = phonebook;
     }
 
-    @Override
+    //@Override
     protected ProfileFilter createFilter(Device device) {
       return null;
     }
 
-    @Override
+    //@Override
     protected ProfileContext createContext(Device device) {
       DigiumPhone phone = (DigiumPhone) device;
       DigiumModel model = (DigiumModel) phone.getModel();
@@ -137,15 +138,16 @@ public class DigiumPhone extends Phone {
       super(name, MIME_TYPE_PLAIN);
     }
 
-    @Override
+    //@Override
     protected ProfileFilter createFilter(Device device) {
       return null;
     }
 
-    @Override
+    //@Override
     protected ProfileContext createContext(Device device) {
       DigiumPhone phone = (DigiumPhone) device;
       DigiumModel model = (DigiumModel) phone.getModel();
+      SpeedDial speedDial = phoneContext.getSpeedDial(phone);
       return new SpeedDialConfiguration(phone, model.getSpeedDialTemplate());
     }
   }

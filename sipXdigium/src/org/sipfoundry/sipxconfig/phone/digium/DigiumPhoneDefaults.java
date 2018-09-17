@@ -18,6 +18,11 @@ import org.sipfoundry.sipxconfig.setting.SettingEntry;
 import org.sipfoundry.sipxconfig.speeddial.SpeedDial;
 
 public class DigiumPhoneDefaults {
+  private final DeviceDefaults m_defaults;
+  private final SpeedDial m_speedDial;
+  private final String m_model;
+  private final boolean m_presenceEnabled;
+  
   DigiumPhoneDefaults(DeviceDefaults defaults, SpeedDial speedDial, String model, boolean presenceEnabled) {
       m_defaults = defaults;
       m_speedDial = speedDial;
