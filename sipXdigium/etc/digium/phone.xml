@@ -567,6 +567,7 @@
           <option><value>peap-gtc</value></option>
           <option><value>ttls-mschap</value></option>
           <option><value>ttls-gtc</value></option>
+        </enum>
       </type>
       <value>null</value>
     </setting>
