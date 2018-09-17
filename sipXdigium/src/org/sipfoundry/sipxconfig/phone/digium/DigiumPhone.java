@@ -139,7 +139,7 @@ public class DigiumPhone extends Phone {
       PhoneContext phoneContext = phone.getPhoneContext();
       DigiumModel model = (DigiumModel) phone.getModel();
       SpeedDial speedDial = phoneContext.getSpeedDial(phone);
-      Collection<PhonebookEntry> entries = phone.getPhonebookManager().getEntries(m_phonebook);
+      Collection<PhonebookEntry> entries = phoneContext.getPhonebookEntries(phone);
       return new DirectoryConfiguration(phone, entries, speedDial, model.getDirectoryTemplate());
     }
   }
