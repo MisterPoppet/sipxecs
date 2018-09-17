@@ -79,27 +79,35 @@
 
   <accounts>
   #foreach ($line in ${lines})
-  #set ($i = $velocityCount)
+  #set ($i = $velocityCount - 1)
     <account index="${i}"
-    #set ($group = $line.getSetting('account'))
-    #foreach ($setting in $cfg.getRecursiveSettings($group))
-    ${setting.ProfileName}="$!{setting.Value}"
-    #end
-    >
-      <host_primary
-      #set ($group = $line.getSetting('host_primary'))
-      #foreach ($setting in $cfg.getRecursiveSettings($group))
-      ${setting.ProfileName}="$!{setting.Value}"
-      #end />
-      <host_alternate
-      #set ($group = $line.getSetting('host_secondary'))
-      #foreach ($setting in $cfg.getRecursiveSettings($group))
-      ${setting.ProfileName}="$!{setting.Value}"
-      #end />
-      #set ($group = $line.getSetting('permission'))
-      #foreach ($setting in $group.Values)
-      <permission id="${setting.ProfileName}" value="$!{setting.Value}"/>
+    #foreach ($group in $line.Values)
+      #if ($group.Name == 'account')
+        #foreach ($setting in $group.Values)
+        ${setting.ProfileName}="$!{setting.Value}"
+        #end
+      >
       #end
+      #if ($group.Name == 'host_primary')
+        <host_primary
+          #foreach ($setting in $group.Values)
+          ${setting.ProfileName}="$!{setting.Value}"
+          #end
+        />
+      #end
+      #if ($group.Name == 'host_secondary')
+        <host_alternate
+          #foreach ($setting in $group.Values)
+          ${setting.ProfileName}="$!{setting.Value}"
+          #end
+        />
+      #end
+      #if ($group.Name == 'permission')
+        #foreach ($setting in $group.Values)
+        <permission id="${setting.ProfileName}" value="$!{setting.Value}"/>
+        #end
+      #end
+    #end
     </account>
   #end
   </accounts>
