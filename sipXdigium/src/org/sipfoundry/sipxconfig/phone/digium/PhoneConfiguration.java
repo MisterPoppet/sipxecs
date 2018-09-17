@@ -19,22 +19,23 @@ package org.sipfoundry.sipxconfig.phone.digium;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import org.sipfoundry.sipxconfig.device.ProfileContext;
+import org.sipfoundry.sipxconfig.speeddial.SpeedDial;
 import org.sipfoundry.sipxconfig.speeddial.Button;
 
 public class PhoneConfiguration extends ProfileContext {
+  private List<Button> m_buttons;
 
-  public PhoneConfiguration(DigiumPhone device, String profileTemplate) {
+  public PhoneConfiguration(DigiumPhone device, SpeedDial speedDial, String profileTemplate) {
     super(device, profileTemplate);
+    if (speedDial != null) {
+        m_buttons = speedDial.getButtons();
+    }
   }
 
   public Collection<Button> getSpeedDial() {
-    DigiumPhone phone = (DigiumPhone) getDevice();
-    if (null == phone.getSpeedDial()) {
-      return Collections.emptyList();
-    } else {
-      return phone.getSpeedDial().getButtons();
-    }
+    return m_buttons;
   }
 }

@@ -19,6 +19,7 @@ package org.sipfoundry.sipxconfig.phone.digium;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import org.sipfoundry.sipxconfig.device.ProfileContext;
 import org.sipfoundry.sipxconfig.speeddial.SpeedDial;

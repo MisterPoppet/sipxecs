@@ -9,12 +9,19 @@
  */
 package org.sipfoundry.sipxconfig.phone.digium;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.sipfoundry.sipxconfig.common.User;
 import org.sipfoundry.sipxconfig.device.DeviceDefaults;
 import org.sipfoundry.sipxconfig.device.DeviceVersion;
+import org.sipfoundry.sipxconfig.device.Profile;
+import org.sipfoundry.sipxconfig.device.ProfileContext;
+import org.sipfoundry.sipxconfig.device.ProfileFilter;
 import org.sipfoundry.sipxconfig.phone.Line;
 import org.sipfoundry.sipxconfig.phone.LineInfo;
 import org.sipfoundry.sipxconfig.phone.Phone;
+import org.sipfoundry.sipxconfig.phonebook.PhonebookEntry;
 import org.sipfoundry.sipxconfig.setting.SettingEntry;
 import org.sipfoundry.sipxconfig.speeddial.SpeedDial;
 
@@ -71,12 +78,12 @@ public class DigiumPhone extends Phone {
 
   @Override
   protected void setLineInfo(Line line, LineInfo lineInfo) {
-    line.setSettingValue(DISPLAY_NAME_PATH, info.getDisplayName());
-    line.setSettingValue(USER_ID_PATH, info.getUserId());
-    line.setSettingValue(PASSWORD_PATH, info.getPassword());
-    line.setSettingValue(REGISTRATION_PATH, info.getRegistrationServer());
-    line.setSettingValue(REGISTRATION_PORT_PATH, info.getRegistrationServerPort());
-    line.setSettingValue(VOICEMAIL_PATH, info.getVoiceMail());
+    line.setSettingValue(DISPLAY_NAME_PATH, lineInfo.getDisplayName());
+    line.setSettingValue(USER_ID_PATH, lineInfo.getUserId());
+    line.setSettingValue(PASSWORD_PATH, lineInfo.getPassword());
+    line.setSettingValue(REGISTRATION_PATH, lineInfo.getRegistrationServer());
+    line.setSettingValue(REGISTRATION_PORT_PATH, lineInfo.getRegistrationServerPort());
+    line.setSettingValue(VOICEMAIL_PATH, lineInfo.getVoiceMail());
   }
 
   @Override
@@ -87,7 +94,7 @@ public class DigiumPhone extends Phone {
     profileTypes = new Profile[] {
       new PhoneProfile(getDeviceFilename()),
       new DirectoryProfile(getDirectoryFilename()),
-      new SppedDialProfile(getSpeedDialFilename()),
+      new SpeedDialProfile(getSpeedDialFilename()),
     };
 
     return profileTypes;
@@ -107,7 +114,8 @@ public class DigiumPhone extends Phone {
     protected ProfileContext createContext(Device device) {
       DigiumPhone phone = (DigiumPhone) device;
       DigiumModel model = (DigiumModel) phone.getModel();
-      return new PhoneConfiguration(phone, model.getProfileTemplate());
+      SpeedDial speedDial = phoneContext.getSpeedDial(phone);
+      return new PhoneConfiguration(phone, speedDial, model.getProfileTemplate());
     }
   }
 
@@ -128,8 +136,9 @@ public class DigiumPhone extends Phone {
     protected ProfileContext createContext(Device device) {
       DigiumPhone phone = (DigiumPhone) device;
       DigiumModel model = (DigiumModel) phone.getModel();
+      SpeedDial speedDial = phoneContext.getSpeedDial(phone);
       Collection<PhonebookEntry> entries = phone.getPhonebookManager().getEntries(m_phonebook);
-      return new DirectoryConfiguration(phone, entries, model.getDirectoryTemplate());
+      return new DirectoryConfiguration(phone, entries, speedDial, model.getDirectoryTemplate());
     }
   }
 
@@ -148,7 +157,7 @@ public class DigiumPhone extends Phone {
       DigiumPhone phone = (DigiumPhone) device;
       DigiumModel model = (DigiumModel) phone.getModel();
       SpeedDial speedDial = phoneContext.getSpeedDial(phone);
-      return new SpeedDialConfiguration(phone, model.getSpeedDialTemplate());
+      return new SpeedDialConfiguration(phone, speedDial, model.getSpeedDialTemplate());
     }
   }
 }
