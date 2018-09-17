@@ -423,7 +423,7 @@
       <type>
         <enum>
           <option><value>NONE</value></option>
-          <option><value>MANUAL<value></option>
+          <option><value>MANUAL</value></option>
           <option><value>LLDP</value></option>
         </enum>
       </type>
@@ -448,11 +448,11 @@
       <type>
         <enum>
           <option><value>auto</value></option>
-          <option><value>10hd<value></option>
+          <option><value>10hd</value></option>
           <option><value>10fd</value></option>
-          <option><value>100hd<value></option>
+          <option><value>100hd</value></option>
           <option><value>100fd</value></option>
-          <option><value>1000fd<value></option>
+          <option><value>1000fd</value></option>
         </enum>
       </type>
       <value>auto</value>
@@ -461,12 +461,12 @@
       <type>
         <enum>
           <option><value>auto</value></option>
-          <option><value>10hd<value></option>
+          <option><value>10hd</value></option>
           <option><value>10fd</value></option>
-          <option><value>100hd<value></option>
+          <option><value>100hd</value></option>
           <option><value>100fd</value></option>
-          <option><value>1000fd<value></option>
-          <option><value>off<value></option>
+          <option><value>1000fd</value></option>
+          <option><value>off</value></option>
         </enum>
       </type>
       <value>auto</value>
