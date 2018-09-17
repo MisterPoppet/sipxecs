@@ -73,6 +73,7 @@ public final class DigiumModel extends PhoneModel {
   };
 
   private DeviceVersion m_deviceVersion;
+  private String m_name;
   private String m_directoryTemplate;
   private String m_speedDialTemplate;
 
@@ -101,6 +102,14 @@ public final class DigiumModel extends PhoneModel {
       } else {
           return VER_2_7_0;
       }
+  }
+
+  public void setName(String value) {
+      m_name = value;
+  }
+
+  public String getName() {
+      return m_name;
   }
 
   public void setDirectoryTemplate(String value) {
