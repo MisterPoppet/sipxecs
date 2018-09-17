@@ -78,25 +78,26 @@
   #end
 
   <accounts>
-  #foreach ($line in $phone.lines)
-    <account
+  #foreach ($line in ${lines})
+  #set ($i = $velocityCount)
+    <account index="${i}"
     #set ($group = $line.getSetting('account'))
-    #foreach ($setting in $cfg.getSettings($group))
+    #foreach ($setting in $cfg.getRecursiveSettings($group))
     ${setting.ProfileName}="$!{setting.Value}"
     #end
     >
       <host_primary
       #set ($group = $line.getSetting('host_primary'))
-      #foreach ($setting in $cfg.getSettings($group))
+      #foreach ($setting in $cfg.getRecursiveSettings($group))
       ${setting.ProfileName}="$!{setting.Value}"
       #end />
       <host_alternate
       #set ($group = $line.getSetting('host_secondary'))
-      #foreach ($setting in $cfg.getSettings($group))
+      #foreach ($setting in $cfg.getRecursiveSettings($group))
       ${setting.ProfileName}="$!{setting.Value}"
       #end />
       #set ($group = $line.getSetting('permission'))
-      #foreach ($setting in $cfg.getSettings($group))
+      #foreach ($setting in $group.Values)
       <permission id="${setting.ProfileName}" value="$!{setting.Value}"/>
       #end
     </account>
