@@ -78,7 +78,7 @@
   #end
 
   <accounts>
-  #foreach ($line in ${lines})
+  #foreach ($line in $phone.ProfileLines)
   #set ($i = $velocityCount - 1)
     <account index="${i}"
     #foreach ($group in $line.Values)
