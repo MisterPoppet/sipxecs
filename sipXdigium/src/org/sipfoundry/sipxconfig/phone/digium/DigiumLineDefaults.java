@@ -47,7 +47,7 @@ public class DigiumLineDefaults {
       return m_defaults.getAuthorizationRealm();
     }
 
-    @SettingEntry(path = { "account.password", "account.passcode" })
+    @SettingEntry(paths = { "account.password", "account.passcode" })
     public String getSipPassword() {
       User user = m_line.getUser();
       if (user == null) {

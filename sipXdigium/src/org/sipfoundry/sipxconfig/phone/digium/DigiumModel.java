@@ -9,8 +9,6 @@
  */
 package org.sipfoundry.sipxconfig.phone.digium;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.sipfoundry.sipxconfig.device.DeviceVersion;
 import org.sipfoundry.sipxconfig.phone.PhoneModel;
 

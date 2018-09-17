@@ -22,12 +22,11 @@ public class DigiumPhoneDefaults {
   private final SpeedDial m_speedDial;
   private final String m_model;
   private final boolean m_presenceEnabled;
-  
-  DigiumPhoneDefaults(DeviceDefaults defaults, SpeedDial speedDial, String model, boolean presenceEnabled) {
+
+  DigiumPhoneDefaults(DeviceDefaults defaults, SpeedDial speedDial, String model) {
       m_defaults = defaults;
       m_speedDial = speedDial;
       m_model = model;
-      m_presenceEnabled = presenceEnabled;
   }
 
   @SettingEntry(path = "time/ntp_server")

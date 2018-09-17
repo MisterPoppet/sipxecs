@@ -9,10 +9,13 @@
  */
 package org.sipfoundry.sipxconfig.phone.digium;
 
+import static java.lang.String.format;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.sipfoundry.sipxconfig.common.User;
+import org.sipfoundry.sipxconfig.device.Device;
 import org.sipfoundry.sipxconfig.device.DeviceDefaults;
 import org.sipfoundry.sipxconfig.device.DeviceVersion;
 import org.sipfoundry.sipxconfig.device.Profile;
@@ -45,13 +48,13 @@ public class DigiumPhone extends Phone {
   @Override
   public void initialize() {
     SpeedDial speedDial = getPhoneContext().getSpeedDial(this);
-    DigiumPhoneDefaults phoneDefaults = new DigiumPhoneDefaults(getPhoneContext().getPhoneDefaults(), speedDial, this);
+    DigiumPhoneDefaults phoneDefaults = new DigiumPhoneDefaults(getPhoneContext().getPhoneDefaults(), speedDial, getModelId());
     addDefaultBeanSettingHandler(phoneDefaults);
   }
 
   @Override
   public void initializeLine(Line line) {
-    DigiumLineDefaults lineDefaults = new DigiumLineDefaults(getPhoneContext().getPhoneDefaults(), line);
+    DigiumLineDefaults lineDefaults = new DigiumLineDefaults(line, getPhoneContext().getPhoneDefaults());
     line.addDefaultBeanSettingHandler(lineDefaults);
   }
 
@@ -88,7 +91,6 @@ public class DigiumPhone extends Phone {
 
   @Override
   public Profile[] getProfileTypes() {
-    DigiumModel model = (DigiumModel) phone.getModel();
     Profile[] profileTypes;
 
     profileTypes = new Profile[] {
@@ -113,6 +115,7 @@ public class DigiumPhone extends Phone {
     //@Override
     protected ProfileContext createContext(Device device) {
       DigiumPhone phone = (DigiumPhone) device;
+      PhoneContext phoneContext = phone.getPhoneContext();
       DigiumModel model = (DigiumModel) phone.getModel();
       SpeedDial speedDial = phoneContext.getSpeedDial(phone);
       return new PhoneConfiguration(phone, speedDial, model.getProfileTemplate());
@@ -120,11 +123,8 @@ public class DigiumPhone extends Phone {
   }
 
   static class DirectoryProfile extends Profile {
-    private Phonebook m_phonebook;
-
-    public DirectoryProfile(String name, Phonebook phonebook) {
+    public DirectoryProfile(String name) {
       super(name, MIME_TYPE_PLAIN);
-      m_phonebook = phonebook;
     }
 
     //@Override
@@ -135,6 +135,7 @@ public class DigiumPhone extends Phone {
     //@Override
     protected ProfileContext createContext(Device device) {
       DigiumPhone phone = (DigiumPhone) device;
+      PhoneContext phoneContext = phone.getPhoneContext();
       DigiumModel model = (DigiumModel) phone.getModel();
       SpeedDial speedDial = phoneContext.getSpeedDial(phone);
       Collection<PhonebookEntry> entries = phone.getPhonebookManager().getEntries(m_phonebook);
@@ -155,6 +156,7 @@ public class DigiumPhone extends Phone {
     //@Override
     protected ProfileContext createContext(Device device) {
       DigiumPhone phone = (DigiumPhone) device;
+      PhoneContext phoneContext = phone.getPhoneContext();
       DigiumModel model = (DigiumModel) phone.getModel();
       SpeedDial speedDial = phoneContext.getSpeedDial(phone);
       return new SpeedDialConfiguration(phone, speedDial, model.getSpeedDialTemplate());
