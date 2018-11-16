@@ -78,10 +78,10 @@
   #end
 
   <accounts>
-  #foreach ($line in $phone.ProfileLines)
+  #foreach ($line in $phone.lines)
   #set ($i = $velocityCount - 1)
     <account index="${i}"
-    #foreach ($group in $line.Values)
+    #foreach ($group in $line.Settings.Values)
       #if ($group.Name == 'account')
         #foreach ($setting in $group.Values)
         ${setting.ProfileName}="$!{setting.Value}"
@@ -113,8 +113,8 @@
   </accounts>
 
   <smart_blf>
-    <blf_items url="$!{TFTPServer}${serial}-smartblf.xml" />
+    <blf_items url="$!{TFTPServer}${serial}-smartblf.cfg" />
   </smart_blf>
 
-  <contacts url="$!{TFTPServer}${serial}-directory.xml" id="corporate" />
+  <contacts url="$!{TFTPServer}${serial}-directory.cfg" id="corporate" />
 </config>
