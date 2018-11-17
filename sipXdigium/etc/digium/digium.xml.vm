@@ -113,7 +113,7 @@
   </accounts>
 
   <smart_blf>
-    <blf_items url="$!{TFTPServer}${serial}-smartblf.cfg" />
+    <blf_items url="$!{TFTPServer}${serial}-smartblf.cfg" blf_contact_group="Speed Dials" />
   </smart_blf>
 
   <contacts url="$!{TFTPServer}${serial}-directory.cfg" id="corporate" />

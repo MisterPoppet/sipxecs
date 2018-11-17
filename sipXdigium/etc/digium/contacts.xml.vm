@@ -1,4 +1,39 @@
 <phonebooks>
   <contacts group_name="Directory" id="0">
+    #foreach($entry in $cfg.Phonebook)
+      <contact
+        server_uuid="uniteme"
+        id="${entry.Number}"
+        first_name="$!{entry.FirstName}"
+        last_name="$!{entry.LastName}"
+        contact_type="sip"
+        account_id="${entry.Number}"
+      >
+        <actions>
+          <action id="primary" dial="${entry.Number}" label="Extension" name="Dial" />
+          <action id="send_to_vm" dial="8${entry.Number}" label="Voicemail" name="Dial Voicemail"></action>
+        </actions>
+      </contact>
+    #end
+  </contacts>
+  <contacts group_name="Speed Dials" id="1">
+    #foreach($entry in $cfg.SpeedDial)
+      <contact
+        server_uuid="uniteme"
+        id="sd-${button.Number}"
+        first_name="$button.Label"
+        contact_type="sip"
+        account_id="${button.Number}"
+        #if (!$button.Blf)
+        subscribe_to="sip:${button.Number}@${device.PrimaryUser.host_primary.server}"
+        #end
+      >
+        <actions>
+          <action id="primary" dial="${button.Number}" dial_prefix="" label="Extension" name="Dial" />
+          <action id="send_to_vm" dial="8${button.Number}" dial_prefix="" label="Voicemail" name="Dial Voicemail"></action>
+          <action id="blindxfer" dial="${button.Number}" dial_prefix="" label="BlindXfer" name="Blind Transfer"/>
+        </actions>
+      </contact>
+    #end
   </contacts>
 </phonebooks>

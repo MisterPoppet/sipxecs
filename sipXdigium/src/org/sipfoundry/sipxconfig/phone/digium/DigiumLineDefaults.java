@@ -43,11 +43,11 @@ public class DigiumLineDefaults {
     }
 
     @SettingEntry(path = "account/server_uuid")
-    public String getRalm() {
+    public String getRealm() {
       return m_defaults.getAuthorizationRealm();
     }
 
-    @SettingEntry(paths = { "account.password", "account.passcode" })
+    @SettingEntry(paths = { "account/password", "account/passcode" })
     public String getSipPassword() {
       User user = m_line.getUser();
       if (user == null) {
@@ -56,14 +56,13 @@ public class DigiumLineDefaults {
       return user.getSipPassword();
     }
 
-    @SettingEntry(paths = "host_primary.server")
+    @SettingEntry(paths = "host_primary/server")
     public String getSipProxyServer() {
       return m_defaults.getDomainName();
-
     }
 
-    @SettingEntry(paths = "host_primary.port")
+    @SettingEntry(paths = "host_primary/port")
     public String getSipProxyPort() {
-      return String.valueOf(m_defaults.getProxyAddress().getPort());
+      return String.valueOf(m_defaults.defaultSipPort());
     }
 }

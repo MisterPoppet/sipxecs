@@ -29,14 +29,32 @@ import org.sipfoundry.sipxconfig.phonebook.AddressBookEntry;
 import org.sipfoundry.sipxconfig.phonebook.PhonebookEntry;
 import org.sipfoundry.sipxconfig.speeddial.SpeedDial;
 import org.sipfoundry.sipxconfig.speeddial.Button;
+import org.sipfoundry.sipxconfig.phone.digium.DigiumPhone;
 
 public class DirectoryConfiguration extends ProfileContext {
+  private DigiumPhone m_device;
   private final Collection<PhonebookEntry> m_phonebookEntries;
   private String phonebookType;
 
   public DirectoryConfiguration(DigiumPhone device, Collection<PhonebookEntry> phonebookEntries, SpeedDial speedDial,
     String profileTemplate) {
     super(device, profileTemplate);
+    m_device = device;
     m_phonebookEntries = phonebookEntries;
+    if (speedDial != null) {
+        m_buttons = speedDial.getButtons();
+    }
+  }
+
+  public DigiumPhone getDevice() {
+    return m_device;
+  }
+
+  public Collection<PhonebookEntry> getPhonebook() {
+      return m_phonebookEntries;
+  }
+
+  public Collection<Button> getSpeedDial() {
+    return m_buttons;
   }
 }
