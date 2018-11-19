@@ -37,4 +37,9 @@ public class DigiumPhoneDefaults {
   public String getDirectedCallPickupString() {
       return m_defaults.getDirectedCallPickupCode();
   }
+
+  @SettingEntry(path = "feature/tftpserver")
+  public String getTftpServer() {
+      return m_defaults.getTftpServer();
+  }
 }

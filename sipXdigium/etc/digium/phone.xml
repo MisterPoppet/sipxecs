@@ -653,5 +653,11 @@
       </type>
       <value />
     </setting>
+    <setting name="tftpserver">
+      <type>
+        <string />
+      </type>
+      <value></value>
+    </setting>
   </group>
 </model>

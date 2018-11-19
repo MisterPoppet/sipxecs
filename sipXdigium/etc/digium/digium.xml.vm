@@ -1,5 +1,10 @@
 #set($serial = "$phone.SerialNumber")
-#set($TFTPServer = "$phone.TftpServer")
+#set ($group = $cfg.EndpointSettings.getSetting('feature'))
+#foreach ($setting in $cfg.getSettings($group))
+  #if ($setting.ProfileName == "tftpserver")
+  #set ($TFTPServer = $setting.Value)
+  #end
+#end
 <?xml version="1.0" ?>
 <config>
   #set ($group = $cfg.EndpointSettings.getSetting('time'))
@@ -278,5 +283,5 @@
     <blf_items url="${TFTPServer}/${serial}-smartblf.cfg" blf_contact_group="Speed Dials" />
   </smart_blf>
 
-  <contacts url="${TFTPServer}/${serial}-directory.cfg" id="corporate" />
+  <contacts url="${TFTPServer}/${serial}-directory.cfg" id="0" />
 </config>
