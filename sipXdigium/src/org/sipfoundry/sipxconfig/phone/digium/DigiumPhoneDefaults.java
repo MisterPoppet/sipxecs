@@ -40,6 +40,11 @@ public class DigiumPhoneDefaults {
 
   @SettingEntry(path = "feature/tftpserver")
   public String getTftpServer() {
-      return m_defaults.getTftpServer();
+      Address serverAddress = m_defaults.getTftpServer();
+      if (null != serverAddress) {
+          return String.format("", serverAddress.getAddress());
+      } else {
+          return "";
+      }
   }
 }
