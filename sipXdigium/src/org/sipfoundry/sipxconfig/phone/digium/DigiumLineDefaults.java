@@ -63,6 +63,6 @@ public class DigiumLineDefaults {
 
     @SettingEntry(paths = "host_primary/port")
     public String getSipProxyPort() {
-      return "5060"
+      return "5060";
     }
 }
