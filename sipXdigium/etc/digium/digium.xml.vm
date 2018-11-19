@@ -280,8 +280,8 @@
   </keymap>
 
   <smart_blf>
-    <blf_items url="${TFTPServer}/${serial}-smartblf.cfg" blf_contact_group="Speed Dials" />
+    <blf_items url="${TFTPServer}/${serial}-smartblf.cfg"/>
   </smart_blf>
 
-  <contacts url="${TFTPServer}/${serial}-directory.cfg" id="0" />
+  <contacts url="${TFTPServer}/${serial}-directory.cfg" id="internal" />
 </config>

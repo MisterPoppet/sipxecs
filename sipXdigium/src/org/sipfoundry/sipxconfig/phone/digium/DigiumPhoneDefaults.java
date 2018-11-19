@@ -42,7 +42,7 @@ public class DigiumPhoneDefaults {
   public String getTftpServer() {
       Address serverAddress = m_defaults.getTftpServer();
       if (null != serverAddress) {
-          return String.format("", serverAddress.getAddress());
+          return String.format("http://PlcmSpIp:PlcmSpIp@", serverAddress.getAddress());
       } else {
           return "";
       }

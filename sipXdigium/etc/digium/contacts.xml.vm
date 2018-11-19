@@ -22,12 +22,19 @@
 <phonebooks>
   <contacts group_name="Directory" id="0">
     #foreach($entry in $cfg.Phonebook)
+    #set ($i = $velocityCount - 1)
       <contact
-        server_uuid="${ServerUuid}"
-        id="${entry.Number}"
+        id="${i}"
+        prefix=""
         first_name="$!{entry.FirstName}"
+        second_name=""
         last_name="$!{entry.LastName}"
+        suffix=""
         contact_type="sip"
+        organization=""
+        job_title=""
+        location=""
+        notes=""
         account_id="${entry.Number}"
       >
         <actions>
@@ -39,10 +46,13 @@
   </contacts>
   <contacts group_name="Speed Dials" id="1">
     #foreach($button in $cfg.SpeedDial)
+    #set ($i = $velocityCount - 1)
       <contact
-        server_uuid="${ServerUuid}"
-        id="sd-${button.Number}"
-        first_name="$button.Label"
+        id="sd-${i}"
+        prefix=""
+        first_name=""
+        second_name=""
+        last_name="${button.Label}"
         contact_type="sip"
         account_id="${button.Number}"
         #if ($button.Blf)
@@ -51,7 +61,9 @@
       >
         <actions>
           <action id="primary" dial="${button.Number}" dial_prefix="" label="Extension" name="Dial" />
+          #if ($button.Blf)
           <action id="send_to_vm" dial="8${button.Number}" dial_prefix="" label="Voicemail" name="Dial Voicemail"></action>
+          #end
           <action id="blindxfer" dial="${button.Number}" dial_prefix="" label="BlindXfer" name="Blind Transfer"/>
         </actions>
       </contact>
