@@ -45,7 +45,7 @@
         first_name="$button.Label"
         contact_type="sip"
         account_id="${button.Number}"
-        #if (!$button.Blf)
+        #if ($button.Blf)
         subscribe_to="sip:${button.Number}@${SubscribeServer}"
         #end
       >
