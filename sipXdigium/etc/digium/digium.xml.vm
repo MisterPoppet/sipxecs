@@ -112,6 +112,168 @@
   #end
   </accounts>
 
+  <keymap>
+    <state id="idle">
+      <softkeys>
+        <key id="0" action="missed_or_call_log"/>
+        <key id="1" action="show_application" label1="_CONTACTS">
+          <arg>contacts</arg>
+        </key>
+        <key id="2" action="forward_calls" label1="_FORWARD"/>
+        <key id="3" action="menu"/>
+      </softkeys>
+    </state>
+    <state id="hold">
+      <softkeys>
+        <key id="0" action="resume"/>
+        <key id="1" action="none"/>
+        <key id="2" action="none"/>
+        <key id="3" action="end_call"/>
+      </softkeys>
+    </state>
+    <state id="hold/transfer">
+      <softkeys>
+        <key id="0" action="resume"/>
+        <key id="1" action="show_application" label1="_CONTACTS">
+          <arg>contacts</arg>
+        </key>
+        <key id="2" action="none"/>
+        <key id="3" action="cancel_call"/>
+      </softkeys>
+    </state>
+    <state id="hold/conference">
+      <softkeys>
+        <key id="0" action="resume"/>
+        <key id="1" action="split_conference"/>
+        <key id="2" action="none"/>
+        <key id="3" action="end_call"/>
+      </softkeys>
+    </state>
+    <state id="hold/preconference">
+      <softkeys>
+        <key id="0" action="resume"/>
+        <key id="1" action="show_application" label1="_CONTACTS">
+          <arg>contacts</arg>
+        </key>
+        <key id="2" action="none"/>
+        <key id="3" action="end_call"/>
+      </softkeys>
+    </state>
+    <state id="incoming">
+      <softkeys>
+        <key id="0" action="accept_call"/>
+        <key id="1" action="reject_call"/>
+        <key id="2" action="transfer_call"/>
+      </softkeys>
+    </state>
+    <state id="incoming/transfer">
+      <softkeys>
+        <key id="0" action="show_application" label1="_CONTACTS">
+          <arg>contacts</arg>
+        </key>
+        <key id="1" action="none"/>
+        <key id="2" action="none"/>
+        <key id="3" action="cancel_call"/>
+      </softkeys>
+    </state>
+    <state id="connected">
+      <softkeys>
+        <key id="0" action="transfer_call"/>
+        <key id="1" action="conference"/>
+        <key id="2" action="none"/>
+        <key id="3" action="end_call"/>
+      </softkeys>
+    </state>
+    <state id="connected/conference">
+      <softkeys>
+        <key id="0" action="none"/>
+        <key id="1" action="split_conference"/>
+        <key id="2" action="none"/>
+        <key id="3" action="end_call"/>
+      </softkeys>
+    </state>
+    <state id="connected/transfer">
+      <softkeys>
+        <key id="0" action="transfer_call"/>
+        <key id="1" action="none"/>
+        <key id="2" action="none"/>
+        <key id="3" action="end_call"/>
+      </softkeys>
+    </state>
+    <state id="dial">
+      <softkeys>
+        <key id="0" action="toggle_url_number"/>
+        <key id="1" action="show_application" label1="_CONTACTS">
+          <arg>contacts</arg>
+        </key>
+        <key id="2" action="none"/>
+        <key id="3" action="cancel_call"/>
+      </softkeys>
+    </state>
+    <state id="dial/conference">
+      <softkeys>
+        <key id="0" action="none"/>
+        <key id="1" action="show_application" label1="_CONTACTS">
+          <arg>contacts</arg>
+        </key>
+        <key id="2" action="none"/>
+        <key id="3" action="cancel_call"/>
+      </softkeys>
+    </state>
+    <state id="dial/transfer">
+      <softkeys>
+        <key id="0" action="none"/>
+        <key id="1" action="show_application" label1="_CONTACTS">
+          <arg>contacts</arg>
+        </key>
+        <key id="2" action="none"/>
+        <key id="3" action="cancel_call"/>
+      </softkeys>
+    </state>
+    <state id="dialing">
+      <softkeys>
+        <key id="0" action="make_call"/>
+        <key id="1" action="backspace"/>
+        <key id="2" action="none"/>
+        <key id="3" action="cancel_call"/>
+      </softkeys>
+    </state>
+    <state id="dialing/conference">
+      <softkeys>
+        <key id="0" action="make_call"/>
+        <key id="1" action="show_application" label1="_CONTACTS">
+          <arg>contacts</arg>
+        </key>
+        <key id="2" action="backspace"/>
+        <key id="3" action="cancel_call"/>
+      </softkeys>
+    </state>
+    <state id="dialing/transfer">
+      <softkeys>
+        <key id="0" action="transfer_call"/>
+        <key id="1" action="make_call"/>
+        <key id="2" action="backspace"/>
+        <key id="3" action="cancel_call"/>
+      </softkeys>
+    </state>
+    <state id="failed">
+      <softkeys>
+        <key id="0" action="none"/>
+        <key id="1" action="none"/>
+        <key id="2" action="none"/>
+        <key id="3" action="clear_call"/>
+      </softkeys>
+    </state>
+    <state id="calling">
+      <softkeys>
+        <key id="0" action="none"/>
+        <key id="1" action="none"/>
+        <key id="2" action="none"/>
+        <key id="3" action="end_call"/>
+      </softkeys>
+    </state>
+  </keymap>
+
   <smart_blf>
     <blf_items url="$!{TFTPServer}${serial}-smartblf.cfg" blf_contact_group="Speed Dials" />
   </smart_blf>
