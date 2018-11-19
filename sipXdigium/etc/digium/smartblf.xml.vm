@@ -3,11 +3,10 @@
     <blf_items>
       #foreach ($button in $cfg.SpeedDial)
       #set ($i = $velocityCount - 1)
-      <blf_item contact_id="sd-${i}">
+      <blf_item location="main" index="${i+1}" contact_id="sd-${i}">
         <behaviors>
           <behavior phone_state="idle" press_action="primary" press_function="dial" />
-          <behavior phone_state="connected" press_action="blindxfer" press_function="transfer" />
-          <behavior phone_state="connected" long_press_action="send_to_vm" long_press_function="transfer" />
+          <behavior phone_state="connected" press_action="blindxfer" press_function="transfer" long_press_action="send_to_vm" long_press_function="transfer" />
         </behaviors>
         <indicators>
           <indicator target_status="idle" led_color="green" led_state="on" />

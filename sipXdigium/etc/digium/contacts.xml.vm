@@ -43,8 +43,7 @@
         </actions>
       </contact>
     #end
-  </contacts>
-  <contacts group_name="Speed Dials" id="1">
+
     #foreach($button in $cfg.SpeedDial)
     #set ($i = $velocityCount - 1)
       <contact

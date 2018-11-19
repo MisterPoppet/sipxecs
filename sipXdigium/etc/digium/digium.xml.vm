@@ -280,8 +280,8 @@
   </keymap>
 
   <smart_blf>
-    <blf_items url="${TFTPServer}/${serial}-smartblf.cfg"/>
+    <blf_items url="${TFTPServer}/${serial}-smartblf.xml"/>
   </smart_blf>
 
-  <contacts url="${TFTPServer}/${serial}-directory.cfg" id="internal" />
+  <contacts url="${TFTPServer}/${serial}-directory.xml" id="internal" />
 </config>

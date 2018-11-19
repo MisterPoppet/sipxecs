@@ -68,10 +68,10 @@ public class DigiumPhone extends Phone {
       return format("%s.cfg", getProfileFilename());
   }
   public String getDirectoryFilename() {
-      return format("%s-directory.cfg", getProfileFilename());
+      return format("%s-directory.xml", getProfileFilename());
   }
   public String getSpeedDialFilename() {
-      return format("%s-smartblf.cfg", getProfileFilename());
+      return format("%s-smartblf.xml", getProfileFilename());
   }
 
   @Override
