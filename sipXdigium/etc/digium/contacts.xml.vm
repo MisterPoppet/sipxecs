@@ -1,8 +1,29 @@
+#foreach ($line in $phone.lines)
+  #set ($i = $velocityCount - 1)
+  #if ($i == 0)
+    #foreach ($group in $line.Settings.Values)
+      #if ($group.Name == 'account')
+        #foreach ($setting in $group.Values)
+          #if ($setting.ProfileName == "server_uuid")
+          #set ($ServerUuid = $setting.Value)
+          #end
+        #end
+      #end
+      #if ($group.Name == 'host_primary')
+        #foreach ($setting in $group.Values)
+          #if ($setting.ProfileName == "server")
+          #set ($SubscribeServer = $setting.Value)
+          #end
+        #end
+      #end
+    #end
+  #end
+#end
 <phonebooks>
   <contacts group_name="Directory" id="0">
     #foreach($entry in $cfg.Phonebook)
       <contact
-        server_uuid="uniteme"
+        server_uuid="${ServerUuid}"
         id="${entry.Number}"
         first_name="$!{entry.FirstName}"
         last_name="$!{entry.LastName}"
@@ -17,15 +38,15 @@
     #end
   </contacts>
   <contacts group_name="Speed Dials" id="1">
-    #foreach($entry in $cfg.SpeedDial)
+    #foreach($button in $cfg.SpeedDial)
       <contact
-        server_uuid="uniteme"
+        server_uuid="${ServerUuid}"
         id="sd-${button.Number}"
         first_name="$button.Label"
         contact_type="sip"
         account_id="${button.Number}"
         #if (!$button.Blf)
-        subscribe_to="sip:${button.Number}@${device.PrimaryUser.host_primary.server}"
+        subscribe_to="sip:${button.Number}@${SubscribeServer}"
         #end
       >
         <actions>
