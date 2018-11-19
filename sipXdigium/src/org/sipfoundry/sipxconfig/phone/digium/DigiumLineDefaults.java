@@ -23,7 +23,7 @@ public class DigiumLineDefaults {
       m_defaults = defaults;
     }
 
-    @SettingEntry(paths = { "account/account_id", "account/username", "account/authname" })
+    @SettingEntry(paths = { "account/account_id", "account/username" })
     public String getUserName() {
       String userName = null;
       User user = m_line.getUser();
@@ -63,6 +63,6 @@ public class DigiumLineDefaults {
 
     @SettingEntry(paths = "host_primary/port")
     public String getSipProxyPort() {
-      return String.valueOf(m_defaults.defaultSipPort());
+      return "5060"
     }
 }

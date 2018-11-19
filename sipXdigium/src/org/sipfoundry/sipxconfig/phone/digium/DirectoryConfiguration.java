@@ -34,6 +34,7 @@ import org.sipfoundry.sipxconfig.phone.digium.DigiumPhone;
 public class DirectoryConfiguration extends ProfileContext {
   private DigiumPhone m_device;
   private final Collection<PhonebookEntry> m_phonebookEntries;
+  private List<Button> m_buttons;
   private String phonebookType;
 
   public DirectoryConfiguration(DigiumPhone device, Collection<PhonebookEntry> phonebookEntries, SpeedDial speedDial,
