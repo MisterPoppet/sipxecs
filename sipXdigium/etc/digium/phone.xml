@@ -655,7 +655,7 @@
     </setting>
     <setting name="tftpserver">
       <type>
-        <string />
+        <ipaddr />
       </type>
       <value></value>
     </setting>
