@@ -15,6 +15,8 @@ import java.util.Collection;
 import java.util.List;
 
 import org.sipfoundry.sipxconfig.common.User;
+import org.sipfoundry.sipxconfig.address.Address;
+import org.sipfoundry.sipxconfig.address.AddressManager;
 import org.sipfoundry.sipxconfig.device.Device;
 import org.sipfoundry.sipxconfig.device.DeviceDefaults;
 import org.sipfoundry.sipxconfig.device.DeviceVersion;
@@ -39,6 +41,8 @@ public class DigiumPhone extends Phone {
   public static final String VOICEMAIL_PATH = "account/voicemail";
   public static final String REGISTRATION_PATH = "host_primary/server";
   public static final String REGISTRATION_PORT_PATH = "host_primary/port";
+
+  private AddressManager m_addressManager;
 
   public DigiumPhone() {
     if (null == getSerialNumber()) {
@@ -162,5 +166,18 @@ public class DigiumPhone extends Phone {
       SpeedDial speedDial = phoneContext.getSpeedDial(phone);
       return new SpeedDialConfiguration(phone, speedDial, model.getSpeedDialTemplate());
     }
+  }
+
+  public void setAddressManager(AddressManager addressManager) {
+      m_addressManager = addressManager;
+  }
+
+  public String getTftpServer() {
+      Address serverAddress = m_addressManager.getSingleAddress(FtpManager.TFTP_ADDRESS);
+      if (null != serverAddress) {
+          return String.format("", serverAddress.getAddress());
+      } else {
+          return "";
+      }
   }
 }
