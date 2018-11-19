@@ -56,6 +56,16 @@ public class DigiumLineDefaults {
       return user.getSipPassword();
     }
 
+    @SettingEntry(path = "account/voicemail")
+    public String getVoiceMail() {
+      String voicemail = null;
+      User user = m_line.getUser();
+      if (user != null) {
+          voicemail = m_defaults.getVoiceMail();
+      }
+      return voicemail;
+    }
+
     @SettingEntry(paths = "host_primary/server")
     public String getSipProxyServer() {
       return m_defaults.getDomainName();
